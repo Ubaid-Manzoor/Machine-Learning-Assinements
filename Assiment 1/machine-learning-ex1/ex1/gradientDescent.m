@@ -16,8 +16,10 @@ for iter = 1:num_iters
     %
   x = X(:,2);
   h = X * theta;
-  theta(1) = theta(1) - alpha * (1/m)* sum(h-y);
-  theta(2) = theta(2) - alpha * (1/m)* sum((h-y).* x);
+  theta_one = theta(1) - alpha * (1/m)* sum(h-y);
+  theta_two = theta(2) - alpha * (1/m)* sum((h-y).* x);
+  theta(1) = theta_one;
+  theta(2) = theta_two;
     % ============================================================
 
     % Save the cost J in every iteration    

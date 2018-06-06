@@ -22,7 +22,6 @@ ylabel('Profit in $10,000s');
 xlabel('Population of City in 10,000s');
 hold on;
 plot(x,Y);
-%print -dpng 'FinalpopulationAndIncomeGraph.png';
 % ============================================================
 
 end
