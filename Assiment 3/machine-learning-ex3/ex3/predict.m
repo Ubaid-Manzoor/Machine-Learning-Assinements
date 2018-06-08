@@ -6,7 +6,7 @@ function p = predict(Theta1, Theta2, X)
 % Useful values
 m = size(X, 1);
 num_labels = size(Theta2, 1);
-
+X = [ones(m, 1) X];
 % You need to return the following variables correctly 
 p = zeros(size(X, 1), 1);
 
@@ -19,14 +19,17 @@ p = zeros(size(X, 1), 1);
 %       function can also return the index of the max element, for more
 %       information see 'help max'. If your examples are in rows, then, you
 %       can use max(A, [], 2) to obtain the max for each row.
-%
 
 
+hidden_layer = sigmoid(Theta1 * X');
 
+hidden_layer = [ones(size(hidden_layer,2),1)';hidden_layer];
 
+p = hidden_layer' * Theta2';
 
-
-
+[E,p] = max(p , [] , 2);
+p = p(:);
+disp(size(p));
 
 
 % =========================================================================
