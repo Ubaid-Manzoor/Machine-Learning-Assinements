@@ -25,14 +25,9 @@ hidden_layer = sigmoid(Theta1 * X');
 
 hidden_layer = [ones(size(hidden_layer,2),1)';hidden_layer];
 
-p = hidden_layer' * Theta2';
+p = sigmoid(Theta2 * hidden_layer);
 
-[E,p] = max(p , [] , 2);
+[E,p] = max(p , [] , 1);
 p = p(:);
-disp(size(p));
-
-
 % =========================================================================
-
-
 end

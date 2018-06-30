@@ -26,7 +26,12 @@ h = sigmoid(z);
 
 J = -(1/m) * sum((y' * log(h) + (1 - y)' * log(1 - h)));
 
+disp(size(h));
+disp(size(y));
+
 grad = ((1/m) * sum(X .* (h - y)))';
+disp(size(X));
+disp(size(sum(X .* (h - y))));
 
 %
 % Note: grad should have the same dimensions as theta
