@@ -26,14 +26,13 @@ sigma = zeros(1, size(X, 2));
 % Hint: You might find the 'mean' and 'std' functions useful.
 %       
 
+mu = sum(X)./size(X,1);
 
+sigma = std(X);
 
+X_norm = (X - mu)./sigma;
 
-
-
-
-
-
+disp(size(mu));
 % ============================================================
 
 end
