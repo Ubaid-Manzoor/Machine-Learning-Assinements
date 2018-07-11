@@ -27,6 +27,7 @@ hidden_layer = [ones(size(hidden_layer,2),1)';hidden_layer];
 
 p = sigmoid(Theta2 * hidden_layer);
 
+
 [E,p] = max(p , [] , 1);
 p = p(:);
 % =========================================================================

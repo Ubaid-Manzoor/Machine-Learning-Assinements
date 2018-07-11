@@ -9,7 +9,6 @@ function out = mapFeature(X1, X2)
 %
 %   Inputs X1, X2 must be the same size
 %
-
 degree = 6;
 out = ones(size(X1(:,1)));
 for i = 1:degree
@@ -17,5 +16,4 @@ for i = 1:degree
         out(:, end+1) = (X1.^(i-j)).*(X2.^j);
     end
 end
-
 end

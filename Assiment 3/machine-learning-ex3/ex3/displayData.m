@@ -21,12 +21,11 @@ display_rows = floor(sqrt(m));
 display_cols = ceil(m / display_rows);
 
 % Between images padding
-pad = 1;
+pad = 2;
 
 % Setup blank display
 display_array = - ones(pad + display_rows * (example_height + pad), ...
-                       pad + display_cols * (example_width + pad));
-
+                       pad + display_cols * (example_width + pad)); 
 % Copy each example into a patch on the display array
 curr_ex = 1;
 for j = 1:display_rows
@@ -40,7 +39,7 @@ for j = 1:display_rows
 		max_val = max(abs(X(curr_ex, :)));
 		display_array(pad + (j - 1) * (example_height + pad) + (1:example_height), ...
 		              pad + (i - 1) * (example_width + pad) + (1:example_width)) = ...
-						reshape(X(curr_ex, :), example_height, example_width) / max_val;
+						reshape(X(curr_ex, :), example_height, example_width)/max_val;
 		curr_ex = curr_ex + 1;
 	end
 	if curr_ex > m, 
