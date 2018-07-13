@@ -85,7 +85,7 @@ for i = 1:m,
   delta3_i = (a3_i .- yVec_i)';%10 1
   
   g_2_i = UB_a2_i .* (1-UB_a2_i);%1 25
-  delta2_i = (UB_Theta2' * delta3_i) .* g_2_i';% 25 10 * 10 1 .* 25 1-> 25 1
+  delta2_i = (UB_Theta2' * delta3_i) .* g_2_i'; % 25 10 * 10 1 .* 25 1-> 25 1
 
   DELTA_one = DELTA_one + delta2_i * B_a1_i;%  + 25 1 * 1 401
   DELTA_two = DELTA_two + delta3_i * B_a2_i;%  + 10 1 * 1 26
