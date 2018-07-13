@@ -71,19 +71,17 @@ Theta2_grad = zeros(size(Theta2));
 DELTA_one = 0;
 DELTA_two = 0;
 %UB = Unbiased
-UB_a1 = a1_biased(:,2:end);
 UB_a2 = a2_biased(2:end,:)';
 B_a2_i = a2_biased;
-UB_Theta1 = Theta1;
 UB_Theta2 = Theta2(:,2:end);
 
 for i = 1:m,
   UB_a2_i = UB_a2(i,:);%1 26
   B_a2_i = a2_biased'(i,:);%1 25
   B_a1_i = a1_biased(i,:);%1 401
+  
   a3_i = h'(i,:);%1 10
   yVec_i = yVec(i,:);%1 10
-
   delta3_i = (a3_i .- yVec_i)';%10 1
   
   g_2_i = UB_a2_i .* (1-UB_a2_i);%1 25
@@ -101,7 +99,7 @@ end;
 %               the regularization separately and then add them to Theta1_grad
 %               and Theta2_grad from Part 2.
 %
-Theta1_grad = DELTA_one/m + lambda/m .* UB_Theta1;
+Theta1_grad = DELTA_one/m + lambda/m .* Theta1;
 Theta1_grad(:,1) = DELTA_one(:,1)/m;
 Theta2_grad = DELTA_two/m + lambda/m .* Theta2;
 Theta2_grad(:,1) = DELTA_two(:,1)/m;
