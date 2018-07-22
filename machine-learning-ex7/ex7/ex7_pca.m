@@ -134,7 +134,7 @@ fprintf(['\nRunning PCA on face dataset.\n' ...
 
 %  Visualize the top 36 eigenvectors found
 displayData(U(:, 1:36)');
-
+disp("->");
 fprintf('Program paused. Press enter to continue.\n');
 pause;
 
@@ -144,7 +144,7 @@ pause;
 %  If you are applying a machine learning algorithm 
 fprintf('\nDimension reduction for face dataset.\n\n');
 
-K = 100;
+K = 16;
 Z = projectData(X_norm, U, K);
 
 fprintf('The projected data Z has a size of: ')
@@ -160,18 +160,18 @@ pause;
 
 fprintf('\nVisualizing the projected (reduced dimension) faces.\n\n');
 
-K = 100;
+K = 16;
 X_rec  = recoverData(Z, U, K);
 
 % Display normalized data
 subplot(1, 2, 1);
-displayData(X_norm(1:100,:));
+displayData(X_norm(1:16,:));
 title('Original faces');
 axis square;
 
 % Display reconstructed data from only k eigenfaces
 subplot(1, 2, 2);
-displayData(X_rec(1:100,:));
+displayData(X_rec(1:16,:));
 title('Recovered faces');
 axis square;
 
