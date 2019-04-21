@@ -3,7 +3,7 @@
 
 **#For Whom**
 ```
-These Assinements Cant Help u If U are doing Machine Learning  Course on Coursera Offered By Stanford
+These Assinements Can Help u If U are doing Machine Learning  Course on Coursera Offered By Stanford
 
 ```
 **#All AssineMents**
